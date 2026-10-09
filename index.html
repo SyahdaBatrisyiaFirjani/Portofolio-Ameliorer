@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syahda Batrisyia Firjani - Portfolio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reset & Light Theme Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: #C9E4FF; /* Light Theme Background Color */
+      color: #0f172a; /* Dark Navy for High Contrast Readability */
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation Bar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(201, 228, 255, 0.90);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(29, 78, 216, 0.12);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 75px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-badge {
+      background: #1d4ed8;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      color: #334155;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #1d4ed8;
+    }
+
+    .btn-contact {
+      background: #1d4ed8;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(29, 78, 216, 0.35);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 110px 0 60px 0;
+    }
+
+    .section-subtitle {
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: #1d4ed8;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding-top: 110px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      color: #0f172a;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #334155;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image-container {
+      text-align: center;
+    }
+
+    .hero-image {
+      width: 270px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 5px solid #ffffff;
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+      background-color: #ffffff;
+    }
+
+    /* Cards Layout */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #ffffff; /* Clean White Card Surface */
+      border: 1px solid #b2d8ff;
+      border-radius: 20px;
+      padding: 1.8rem;
+      box-shadow: 0 10px 25px rgba(0, 50, 120, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #1d4ed8;
+      box-shadow: 0 16px 35px rgba(29, 78, 216, 0.15);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: #e0f0ff;
+      color: #1d4ed8;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* About Section Info List */
+    .info-list {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .info-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+    }
+
+    .info-list span.label {
+      color: #64748b;
+    }
+
+    .info-list span.val {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Achievement Item */
+    .achievement-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .achievement-year {
+      background: #1d4ed8;
+      color: #ffffff;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    /* Contact Links */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .contact-card i {
+      font-size: 1.5rem;
+      color: #1d4ed8;
+    }
+
+    .contact-info small {
+      display: block;
+      color: #64748b;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    .contact-info a, .contact-info span {
+      color: #0f172a;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .contact-info a:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(29, 78, 216, 0.15);
+      padding: 2rem 0;
+      text-align: center;
+      color: #475569;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      background: rgba(201, 228, 255, 0.5);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-image-container {
+        order: -1;
+      }
+
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <span class="logo-badge">S</span> Syahda Batrisyia
+        </div>
+        <ul class="nav-links">
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#capabilities">What I Can Do</a></li>
+          <li><a href="#achievement">Achievement</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn-contact">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="section-subtitle">Information Systems Student</p>
+          <h1>Hello, I'm <br><span style="color: #1d4ed8;">Syahda Batrisyia Firjani</span></h1>
+          <p>First-year Student in Information Systems at Surabaya State University (UNESA). Passionate about informatics, eager to learn new things, highly responsible, and collaborative in teamwork.</p>
+        </div>
+        <div class="hero-image-container">
+          <!-- Pastikan file foto dinamai 'profile.jpg' di folder yang sama -->
+          <img src="profile.jpg" alt="Syahda Batrisyia Firjani" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <div class="container">
+      <p class="section-subtitle">Profile & Background</p>
+      <h2 class="section-title">About Me</h2>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+          <h3>Biography</h3>
+          <p>
+            I am Syahda Batrisyia Firjani, warmly known as <strong>Sasya</strong>. As an Information Systems student, I am deeply interested in informatics and modern digital systems. I possess a strong eagerness to learn new technologies, work collaboratively within teams, and complete every assigned task with full responsibility.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Education & Status</h3>
+          <ul class="info-list">
+            <li>
+              <span class="label">Full Name</span>
+              <span class="val">Syahda Batrisyia Firjani</span>
+            </li>
+            <li>
+              <span class="label">Nickname</span>
+              <span class="val">Sasya</span>
+            </li>
+            <li>
+              <span class="label">Student ID (NIM)</span>
+              <span class="val">26051214157</span>
+            </li>
+            <li>
+              <span class="label">Study Program</span>
+              <span class="val">S1 Information Systems</span>
+            </li>
+            <li>
+              <span class="label">University</span>
+              <span class="val">Universitas Negeri Surabaya</span>
+            </li>
+            <li>
+              <span class="label">Current Status</span>
+              <span class="val">First-year Student (2026)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Can Do Section -->
+  <section id="capabilities">
+    <div class="container">
+      <p class="section-subtitle">My Capabilities</p>
+      <h2 class="section-title">What I Can Do</h2>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
+          <h3>Teamwork & Collaboration</h3>
+          <p>Proven ability to adapt and collaborate effectively in team environments to achieve common objectives.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Responsibility & Work Ethic</h3>
+          <p>Committed to completing assigned duties with high integrity, accuracy, and accountability.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-comments"></i></div>
+          <h3>Communicative & Responsive</h3>
+          <p>Strong interpersonal communication capabilities, ensuring prompt, clear, and active engagement.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-folder-tree"></i></div>
+          <h3>File & Document Management</h3>
+          <p>Skilled in organizing, structuring, and maintaining digital files, records, and documentation efficiently.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Eagerness to Learn</h3>
+          <p>Enthusiastic about learning new skills, exploring digital tools, and adapting to technology workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievement Section -->
+  <section id="achievement">
+    <div class="container">
+      <p class="section-subtitle">Recognitions & Milestones</p>
+      <h2 class="section-title">Achievement</h2>
+
+      <div class="card achievement-item">
+        <span class="achievement-year">2026</span>
+        <div>
+          <h3>Admitted to S1 Information Systems at UNESA</h3>
+          <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.4rem;">Universitas Negeri Surabaya</p>
+          <p>Accepted into the undergraduate Information Systems program at State University of Surabaya, beginning an academic journey in technology and digital systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-subtitle">Get In Touch</p>
+      <h2 class="section-title">Let's Connect</h2>
+
+      <div class="grid-3">
+        <div class="card contact-card">
+          <i class="fa-solid fa-envelope"></i>
+          <div class="contact-info">
+            <small>Email</small>
+            <a href="mailto:syahdabatrisyia.f@gmail.com">syahdabatrisyia.f@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="card contact-card">
+          <i class="fa-brands fa-linkedin"></i>
+          <div class="contact-info">
+            <small>LinkedIn</small>
+            <a href="https://www.linkedin.com/in/syahda-batrisyia-firjani-0b4893342?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">Syahda Batrisyia Firjani</a>
+          </div>
+        </div>
+
+        <div class="card contact-card">
+          <i class="fa-brands fa-github"></i>
+          <div class="contact-info">
+            <small>GitHub</small>
+            <a href="https://github.com/SyahdaBatrisyiaFirjani/Portofolio-Ameliorer" target="_blank">Portofolio-Ameliorer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Syahda Batrisyia Firjani. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
